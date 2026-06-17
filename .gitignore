@@ -1,0 +1,102 @@
+# ===================================
+# 前端 (Nuxt.js / Vue)
+# ===================================
+**/node_modules/
+**/dist/
+**/.nuxt/
+**/.output/
+**/.cache/
+*.local
+
+# ===================================
+# 后端 (Maven / Java)
+# ===================================
+**/target/
+**/*.class
+*.iml
+**/dependency-reduced-pom.xml
+
+# 打包产物
+*.jar
+*.war
+*.nar
+*.ear
+
+# ===================================
+# Spring Boot
+# ===================================
+application-local.yml
+application-local.properties
+bootstrap-local.yml
+bootstrap-local.properties
+
+# ===================================
+# IDE
+# ===================================
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Eclipse
+.classpath
+.project
+.settings/
+.factorypath
+.springBeans
+
+# NetBeans
+nbproject/
+nb-configuration.xml
+
+# VS Code
+*.code-workspace
+
+# ===================================
+# 安全 & 凭证
+# ===================================
+*.p12
+*.pem
+*.key
+*.keystore
+*.jks
+*.truststore
+credentials.*
+secrets.*
+*.crt
+
+# ===================================
+# 系统 & 环境
+# ===================================
+*.log
+logs/
+.env
+.env.*
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# ===================================
+# 数据库 & 中间件
+# ===================================
+data/
+dump/
+*.rdb
+*.aof
+
+# ===================================
+# Claude Code
+# ===================================
+**/.claude/
+CLAUDE.md
+
+# ===================================
+# 临时 & 脚本文件
+# ===================================
+reorganize.ps1
+reorganize_log.txt
+reorganize_output.txt
+*.tmp
+*.temp
+*.bak

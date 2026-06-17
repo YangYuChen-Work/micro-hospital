@@ -1,0 +1,185 @@
+/* === 智医通 Animation Library === */
+
+/* ----- Keyframes ----- */
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(20px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.92); }
+  to   { opacity: 1; transform: scale(1); }
+}
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(74, 144, 217, 0.4); }
+  50%      { box-shadow: 0 0 0 10px rgba(74, 144, 217, 0); }
+}
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-6px); }
+}
+
+/* ----- Utility animation classes ----- */
+.anim-fade-in     { animation: fadeIn 0.4s cubic-bezier(0.4, 0, 0.2, 1) both; }
+.anim-slide-up    { animation: slideUp 0.5s cubic-bezier(0.4, 0, 0.2, 1) both; }
+.anim-scale-in    { animation: scaleIn 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) both; }
+.anim-slide-right { animation: slideInRight 0.4s cubic-bezier(0.4, 0, 0.2, 1) both; }
+
+/* ----- Staggered list animation ----- */
+.v-scroll-list .v-card {
+  animation: fadeSlideIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+.v-scroll-list .v-card:nth-child(1)  { animation-delay: 0.05s; }
+.v-scroll-list .v-card:nth-child(2)  { animation-delay: 0.1s; }
+.v-scroll-list .v-card:nth-child(3)  { animation-delay: 0.15s; }
+.v-scroll-list .v-card:nth-child(4)  { animation-delay: 0.2s; }
+.v-scroll-list .v-card:nth-child(5)  { animation-delay: 0.25s; }
+.v-scroll-list .v-card:nth-child(6)  { animation-delay: 0.3s; }
+.v-scroll-list .v-card:nth-child(7)  { animation-delay: 0.35s; }
+.v-scroll-list .v-card:nth-child(8)  { animation-delay: 0.4s; }
+.v-scroll-list .v-card:nth-child(9)  { animation-delay: 0.45s; }
+.v-scroll-list .v-card:nth-child(10) { animation-delay: 0.5s; }
+
+/* ----- Card hover lift effect ----- */
+.hospital-list-item {
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+              box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.hospital-list-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04) !important;
+}
+
+/* ----- Search bar focus glow ----- */
+.search-input .el-input__inner {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.search-input.is-focus .el-input__inner,
+.search-input .el-input__inner:focus {
+  box-shadow: 0 0 0 3px rgba(74, 144, 217, 0.12);
+  border-color: #4A90D9 !important;
+}
+
+/* ----- Button ripple & hover ----- */
+.v-button,
+.el-button--primary {
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  position: relative;
+  overflow: hidden;
+}
+.v-button:hover,
+.el-button--primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(74, 144, 217, 0.3);
+}
+.v-button:active,
+.el-button--primary:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(74, 144, 217, 0.2);
+}
+
+/* ----- Clickable link hover ----- */
+.v-link.clickable {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+.v-link.clickable:hover {
+  transform: translateY(-1px);
+}
+.v-link.clickable:active {
+  transform: translateY(0);
+}
+
+/* ----- Filter tag hover ----- */
+.filter-wrapper .item.v-link {
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 20px;
+  padding: 4px 14px;
+  margin: 2px 4px;
+}
+.filter-wrapper .item.v-link:hover {
+  background: #EEF4FB;
+  color: #4A90D9;
+}
+.filter-wrapper .item.v-link.selected {
+  background: #4A90D9;
+  color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 2px 8px rgba(74, 144, 217, 0.3);
+}
+
+/* ----- Carousel fade ----- */
+.el-carousel__item {
+  animation: fadeIn 0.6s ease both;
+}
+
+/* ----- Dialog entrance ----- */
+.el-dialog {
+  animation: scaleIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* ----- Notice items hover ----- */
+.notice-wrapper {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 6px 8px;
+  border-radius: 6px;
+  margin: 0 -8px;
+}
+.notice-wrapper:hover {
+  background: #F5F7FA;
+}
+
+/* ----- Nav item hover underline ----- */
+.left-nav .nav-item .v-link {
+  transition: color 0.2s ease;
+}
+.left-nav .nav-item {
+  transition: background 0.2s ease;
+}
+
+/* ----- Skeleton loading shimmer ----- */
+.skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e8e8e8 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 8px;
+}
+
+/* ----- Popover / dropdown ----- */
+.el-dropdown-menu {
+  animation: fadeSlideIn 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 10px !important;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1) !important;
+  border: 1px solid #EDF0F4 !important;
+}
+.el-dropdown-menu__item {
+  transition: all 0.15s ease;
+  border-radius: 6px;
+  margin: 2px 6px;
+}
+.el-dropdown-menu__item:hover {
+  background: #EEF4FB !important;
+  color: #4A90D9 !important;
+}
+
+/* ----- Message / Toast ----- */
+.el-message {
+  animation: fadeSlideIn 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 10px !important;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08) !important;
+}
